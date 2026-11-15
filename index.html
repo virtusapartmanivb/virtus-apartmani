@@ -1,0 +1,755 @@
+<!DOCTYPE html>
+<html lang="sr" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Virtus Apartmani Vrnjačka Banja | Smeštaj Strogi Centar & Merkur</title>
+    <meta name="description" content="Virtus Apartmani Vrnjačka Banja – moderan smeštaj u strogom centru (Cara Dušana 26), prekoputa SB Merkur i na 1 min od Promenade. Besplatan parking, Wi-Fi, Smart TV, vaučeri.">
+    <meta name="keywords" content="Virtus Apartmani, Vrnjačka Banja smeštaj, apartmani Vrnjačka Banja centar, smeštaj blizu Merkura, apartmani sa parkingom Vrnjačka Banja, vaučeri Vrnjačka Banja">
+    <meta name="robots" content="index, follow">
+    
+    <!-- Strukturirani podaci za Google pretragu (SEO) -->
+    <script type="application/ld+json">
+    {
+      "@context": "https://schema.org",
+      "@type": "LodgingBusiness",
+      "name": "Virtus Apartmani Vrnjačka Banja",
+      "description": "Moderan privatni smeštaj u strogom centru Vrnjačke Banje, prekoputa banjskog lečilišta Merkur i na minut hoda od Promenade.",
+      "address": {
+        "@type": "PostalAddress",
+        "streetAddress": "Cara Dušana 26",
+        "addressLocality": "Vrnjačka Banja",
+        "postalCode": "36210",
+        "addressCountry": "RS"
+      },
+      "telephone": "+381631904535",
+      "email": "virtusapartmanivb@gmail.com",
+      "checkinTime": "12:00",
+      "checkoutTime": "10:00",
+      "amenityFeature": [
+        {"@type": "LocationFeatureSpecification", "name": "Besplatan privatni parking", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Besplatan brzi WiFi", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Klima uređaj", "value": true},
+        {"@type": "LocationFeatureSpecification", "name": "Smart TV", "value": true}
+      ]
+    }
+    </script>
+
+    <script src="https://cdn.tailwindcss.com"></script>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@600;700&family=Plus+Jakarta+Sans:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <script>
+        tailwind.config = {
+            theme: {
+                extend: {
+                    colors: {
+                        spa: { bg: '#FAF8F5', sand: '#F2EDE4', green: '#1B4332', greenLight: '#2D6A4F', gold: '#B08968', text: '#2C2C2C', muted: '#66635E' }
+                    },
+                    fontFamily: {
+                        serif: ['"Cormorant Garamond"', 'serif'],
+                        sans: ['"Plus Jakarta Sans"', 'sans-serif'],
+                    }
+                }
+            }
+        }
+    </script>
+    <style>
+        body { background-color: #FAF8F5; color: #2C2C2C; font-family: 'Plus Jakarta Sans', sans-serif; }
+        h1, h2, h3 { font-family: 'Cormorant Garamond', serif; }
+        .glass-nav { background: rgba(250, 248, 245, 0.92); backdrop-filter: blur(10px); }
+    </style>
+</head>
+<body class="antialiased">
+
+    <!-- Navigacija (Utisci pa Lokacija) -->
+    <header class="fixed top-0 w-full z-40 glass-nav border-b border-stone-200 h-20 flex items-center justify-between px-6 lg:px-12">
+        <a href="#" class="flex items-center gap-3">
+            <div class="w-10 h-10 rounded-full bg-spa-green text-white flex items-center justify-center font-serif text-2xl font-bold">V</div>
+            <div>
+                <span class="font-serif text-2xl font-bold text-spa-green block leading-none">VIRTUS</span>
+                <span class="text-[11px] uppercase tracking-widest text-spa-gold font-semibold" data-i18n="brandSub">Apartmani • Vrnjačka Banja</span>
+            </div>
+        </a>
+        <nav class="hidden md:flex items-center gap-8 text-sm font-medium text-spa-text">
+            <a href="#apartmani" class="hover:text-spa-green transition" data-i18n="navApts">Apartmani</a>
+            <a href="#sadrzaj" class="hover:text-spa-green transition" data-i18n="navAmenities">Sadržaj</a>
+            <a href="#galerija" class="hover:text-spa-green transition" data-i18n="navGallery">Galerija</a>
+            <a href="#utisci" class="hover:text-spa-green transition" data-i18n="navReviews">Utisci</a>
+            <a href="#lokacija" class="hover:text-spa-green transition" data-i18n="navLocation">Lokacija</a>
+            <a href="#rezervacija" class="hover:text-spa-green transition" data-i18n="navContact">Kontakt</a>
+        </nav>
+        <button id="langToggle" onclick="toggleLanguage()" class="px-3.5 py-1.5 rounded-full border border-spa-green/30 text-xs font-bold text-spa-green hover:bg-spa-green hover:text-white transition cursor-pointer">EN</button>
+    </header>
+
+    <!-- Hero -->
+    <section class="pt-32 pb-8 md:pb-20 px-6 lg:px-12 max-w-7xl mx-auto grid lg:grid-cols-2 gap-8 md:gap-12 items-center">
+        <div>
+            <div class="inline-block px-3.5 py-1.5 rounded-full bg-spa-sand border border-spa-gold/30 text-spa-green text-xs font-semibold mb-4" data-i18n="heroBadge">
+                Cara Dušana 26 • Prekoputa Merkura i banjskog lečilišta
+            </div>
+            <h1 class="text-4xl sm:text-6xl font-bold text-spa-green leading-tight" data-i18n="heroTitle">
+                Vaš miran kutak u srcu Vrnjačke Banje
+            </h1>
+            <p class="text-spa-muted mt-4 text-base sm:text-lg leading-relaxed font-medium" data-i18n="heroDesc">
+                Dobrodošli u Virtus Apartmane – vaš topli, ušuškani kutak u strogom centru Vrnjačke Banje (Cara Dušana 26). Smešteni neposredno prekoputa Specijalne bolnice Merkur i na svega minut hoda od centralne Promenade i Mosta ljubavi, nudimo vam savršen spoj mira, udobnosti i blizine svih dešavanja. Opustite se i doživite banju onako kako dolikuje!
+            </p>
+            <div class="mt-8 flex flex-wrap gap-4">
+                <a href="#apartmani" class="bg-spa-green text-white px-7 py-3.5 rounded-full font-medium hover:bg-spa-greenLight transition shadow" data-i18n="heroBtn1">Pogledaj apartmane</a>
+                <a href="#rezervacija" class="bg-white text-spa-green border border-spa-green/25 px-7 py-3.5 rounded-full font-medium hover:bg-spa-sand transition" data-i18n="heroBtn2">Rezervacija</a>
+            </div>
+        </div>
+        <div class="rounded-3xl overflow-hidden shadow-2xl border-4 border-white aspect-[4/3]">
+            <img src="https://images.unsplash.com/photo-1616594039964-ae9021a400a0?auto=format&fit=crop&w=1200&q=80" alt="Virtus Apartmani Vrnjačka Banja smeštaj u centru" class="w-full h-full object-cover">
+        </div>
+    </section>
+
+    <!-- Apartmani Grid -->
+    <section id="apartmani" class="py-8 md:py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-8 md:mb-16">
+            <span class="text-xs uppercase tracking-widest text-spa-gold font-bold" data-i18n="aptOverline">Naš Smeštaj</span>
+            <h2 class="text-4xl sm:text-5xl font-bold text-spa-green mt-2" data-i18n="aptTitle">Tri apartmana, kreirana za uživanje</h2>
+            <p class="text-spa-muted text-sm sm:text-base mt-3" data-i18n="aptSub">Svi su novi, sa odvojenom spavaćom sobom, opremljenom kuhinjom i sopstvenim kupatilom.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 md:gap-8" id="apartmentsGrid"></div>
+    </section>
+
+    <!-- Sadržaj -->
+    <section id="sadrzaj" class="py-8 md:py-16 px-6 lg:px-12 max-w-7xl mx-auto bg-spa-sand/50 rounded-3xl my-4 md:my-10 border border-stone-200/60">
+        <div class="flex flex-col md:flex-row md:items-end justify-between mb-8 md:mb-12">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-spa-gold font-bold" data-i18n="amOverline">Pogodnosti</span>
+                <h2 class="text-4xl font-bold text-spa-green mt-2" data-i18n="amTitle">Sve što vam treba je već tu</h2>
+            </div>
+            <p class="text-sm text-spa-muted mt-2 md:mt-0" data-i18n="amSub">Gosti su WiFi i lokaciju ocenili čistom desetkom.</p>
+        </div>
+        <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-4 md:gap-6">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-spa-gold/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-spa-green/10 text-spa-green flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="3" y="3" width="18" height="18" rx="4"/><path d="M9 17V7h4a3 3 0 0 1 0 6H9"/></svg>
+                </div>
+                <h4 class="font-bold text-spa-green text-lg" data-i18n="am1Title">Privatni parking</h4>
+                <p class="text-xs text-spa-muted mt-1" data-i18n="am1Desc">Besplatan, u okviru objekta</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-spa-gold/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-spa-green/10 text-spa-green flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M5 12.55a11 11 0 0 1 14.08 0"/><path d="M1.42 9a16 16 0 0 1 21.16 0"/><path d="M8.53 16.11a6 6 0 0 1 6.95 0"/><circle cx="12" cy="20" r="1"/></svg>
+                </div>
+                <h4 class="font-bold text-spa-green text-lg" data-i18n="am2Title">Brz WiFi</h4>
+                <p class="text-xs text-spa-muted mt-1" data-i18n="am2Desc">99 Mbps, besplatan</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-spa-gold/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-spa-green/10 text-spa-green flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M3 2v7c0 1.1.9 2 2 2h4a2 2 0 0 0 2-2V2"/><path d="M7 2v20"/><path d="M21 15V2v0a5 5 0 0 0-5 5v6c0 1.1.9 2 2 2h3Zm0 0v7"/></svg>
+                </div>
+                <h4 class="font-bold text-spa-green text-lg" data-i18n="am3Title">Opremljena kuhinja</h4>
+                <p class="text-xs text-spa-muted mt-1" data-i18n="am3Desc">Frižider, rerna, ploča za kuvanje</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-spa-gold/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-spa-green/10 text-spa-green flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M17 8h1a4 4 0 1 1 0 8h-1"/><path d="M3 8h14v9a4 4 0 0 1-4 4H7a4 4 0 0 1-4-4Z"/><line x1="6" y1="2" x2="6" y2="4"/><line x1="10" y1="2" x2="10" y2="4"/><line x1="14" y1="2" x2="14" y2="4"/></svg>
+                </div>
+                <h4 class="font-bold text-spa-green text-lg" data-i18n="am4Title">Aparat za kafu</h4>
+                <p class="text-xs text-spa-muted mt-1" data-i18n="am4Desc">I električno kuvalo</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-spa-gold/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-spa-green/10 text-spa-green flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><line x1="12" y1="2" x2="12" y2="22"/><line x1="2" y1="12" x2="22" y2="12"/><path d="m20 16-4-4 4-4"/><path d="m4 8 4 4-4 4"/><path d="m16 4-4 4-4-4"/><path d="m8 20 4-4 4 4"/></svg>
+                </div>
+                <h4 class="font-bold text-spa-green text-lg" data-i18n="am5Title">Klima uređaj</h4>
+                <p class="text-xs text-spa-muted mt-1" data-i18n="am5Desc">Inverter klima u svakom apartmanu</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-spa-gold/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-spa-green/10 text-spa-green flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="14" rx="2"/><line x1="8" y1="21" x2="16" y2="21"/><line x1="12" y1="18" x2="12" y2="21"/></svg>
+                </div>
+                <h4 class="font-bold text-spa-green text-lg" data-i18n="am6Title">Smart TV</h4>
+                <p class="text-xs text-spa-muted mt-1" data-i18n="am6Desc">EON box kanali</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-spa-gold/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-spa-green/10 text-spa-green flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M9 6 6.5 3.5a1.5 1.5 0 0 0-1-.5C4.683 3 4 3.683 4 4.5V17a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2v-5"/><line x1="10" y1="5" x2="8" y2="7"/><line x1="2" y1="12" x2="22" y2="12"/><line x1="7" y1="19" x2="7" y2="21"/><line x1="17" y1="19" x2="17" y2="21"/></svg>
+                </div>
+                <h4 class="font-bold text-spa-green text-lg" data-i18n="am7Title">Sopstveno kupatilo</h4>
+                <p class="text-xs text-spa-muted mt-1" data-i18n="am7Desc">Tuš kabina, peškiri, fen i kupke</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100 hover:border-spa-gold/40 transition">
+                <div class="w-11 h-11 rounded-xl bg-spa-green/10 text-spa-green flex items-center justify-center mb-4">
+                    <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="1.75" viewBox="0 0 24 24"><path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2"/><circle cx="9" cy="7" r="4"/><path d="M22 21v-2a4 4 0 0 0-3-3.87"/><path d="M16 3.13a4 4 0 0 1 0 7.75"/></svg>
+                </div>
+                <h4 class="font-bold text-spa-green text-lg" data-i18n="am8Title">Za porodice</h4>
+                <p class="text-xs text-spa-muted mt-1" data-i18n="am8Desc">Krevetac za bebe besplatno</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galerija -->
+    <section id="galerija" class="py-8 md:py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-8 md:mb-12">
+            <span class="text-xs uppercase tracking-widest text-spa-gold font-bold" data-i18n="galOverline">Foto Galerija</span>
+            <h2 class="text-4xl font-bold text-spa-green mt-2" data-i18n="galTitle">Zavirite u Virtus Apartmane</h2>
+        </div>
+        <div class="grid grid-cols-2 md:grid-cols-4 gap-4">
+            <div class="rounded-2xl overflow-hidden shadow-sm h-48"><img src="https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=600&q=80" alt="Virtus Apartman 1 enterijer" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+            <div class="rounded-2xl overflow-hidden shadow-sm h-48"><img src="https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=600&q=80" alt="Virtus Apartman 2 dnevni boravak" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+            <div class="rounded-2xl overflow-hidden shadow-sm h-48"><img src="https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=600&q=80" alt="Virtus Apartman 3 spavaća soba" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+            <div class="rounded-2xl overflow-hidden shadow-sm h-48"><img src="https://images.unsplash.com/photo-1560448204-e02f11c3d0e2?auto=format&fit=crop&w=600&q=80" alt="Virtus Apartmani Vrnjačka Banja kuhinja" class="w-full h-full object-cover hover:scale-105 transition duration-300"></div>
+        </div>
+    </section>
+
+    <!-- Utisci sa Booking-a i Kućni red (Sada iznad lokacije) -->
+    <section id="utisci" class="pt-8 pb-20 md:py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="text-center max-w-2xl mx-auto mb-10 md:mb-16">
+            <span class="text-xs uppercase tracking-widest text-spa-gold font-bold" data-i18n="revOverline">Booking.com Ocene</span>
+            <h2 class="text-4xl font-bold text-spa-green mt-2" data-i18n="revTitle">Šta kažu naši gosti</h2>
+            <p class="text-spa-muted text-sm mt-2" data-i18n="revSub">Izuzetne ocene za čistoću, udobnost i vrhunsku lokaciju.</p>
+        </div>
+        <div class="grid md:grid-cols-3 gap-6 mb-20">
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
+                <div class="text-spa-gold font-bold text-lg mb-2">★★★★★</div>
+                <p class="text-sm text-spa-muted italic" data-i18n="rev1Text">"Sve je bilo savršeno! Lokacija je u samom centru, apartman prečist, moderan i ima sve što treba. Preporuka svima!"</p>
+                <p class="text-xs font-bold text-spa-green mt-4">— Jelena, Srbija (Booking)</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
+                <div class="text-spa-gold font-bold text-lg mb-2">★★★★★</div>
+                <p class="text-sm text-spa-muted italic" data-i18n="rev2Text">"Domaćini izuzetno ljubazni. Wi-Fi i lokacija su čista desetka. Parking obezbeđen ispred zgrade."</p>
+                <p class="text-xs font-bold text-spa-green mt-4">— Stefan, Beograd (Booking)</p>
+            </div>
+            <div class="bg-white p-6 rounded-2xl shadow-sm border border-stone-100">
+                <div class="text-spa-gold font-bold text-lg mb-2">★★★★★</div>
+                <p class="text-sm text-spa-muted italic" data-i18n="rev3Text">"Mirno iako je u centru. Odvojena spavaća soba pruža odličan komfor. Sigurno se vraćamo ponovo!"</p>
+                <p class="text-xs font-bold text-spa-green mt-4">— Marija, Novi Sad (Booking)</p>
+            </div>
+        </div>
+
+        <!-- Pravila i uslovi -->
+        <div class="bg-spa-sand/60 rounded-3xl p-8 lg:p-12 border border-stone-200">
+            <h3 class="font-serif text-3xl font-bold text-spa-green mb-8 text-center" data-i18n="rulesTitle">Važne informacije za goste</h3>
+            <div class="grid sm:grid-cols-2 lg:grid-cols-4 gap-8 text-sm">
+                <div>
+                    <h4 class="font-bold text-spa-green uppercase tracking-wider text-xs mb-2" data-i18n="rule1Title">Prijava</h4>
+                    <p class="text-spa-muted" data-i18n="rule1Desc">Od 12:00 h (uz najavu dolaska).</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-spa-green uppercase tracking-wider text-xs mb-2" data-i18n="rule2Title">Odjava</h4>
+                    <p class="text-spa-muted" data-i18n="rule2Desc">Do 10:00 h.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-spa-green uppercase tracking-wider text-xs mb-2" data-i18n="rule3Title">Plaćanje i Vaučeri</h4>
+                    <p class="text-spa-muted" data-i18n="rule3Desc">Plaćanje samo gotovinom. Postoji mogućnost korišćenja turističkih vaučera.</p>
+                </div>
+                <div>
+                    <h4 class="font-bold text-spa-green uppercase tracking-wider text-xs mb-2" data-i18n="rule4Title">Kućni red</h4>
+                    <p class="text-spa-muted" data-i18n="rule4Desc">Zabranjeno pušenje i kućni ljubimci. Kućni mir / tišina od 22:00 h.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Lokacija (Sada iznad kontakta) -->
+    <section id="lokacija" class="py-20 px-6 bg-spa-sand/60 border-t border-stone-200">
+        <div class="max-w-7xl mx-auto grid lg:grid-cols-2 gap-10 items-center">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-spa-gold font-bold" data-i18n="locOverline">Lokacija</span>
+                <h2 class="text-3xl sm:text-4xl font-bold text-spa-green mt-2" data-i18n="locTitle">Sve Vam je na dohvat ruke</h2>
+                <p class="text-spa-muted text-sm sm:text-base mt-4" data-i18n="locDesc">Cara Dušana 26, u strogom centru Vrnjačke Banje.</p>
+                <ul class="mt-6 space-y-3 text-sm font-medium">
+                    <li class="flex justify-between py-2 border-b border-stone-200"><span data-i18n="dist1">Promenada (šetalište)</span><span class="text-spa-green font-bold" data-i18n="dist1Val">1 min hoda</span></li>
+                    <li class="flex justify-between py-2 border-b border-stone-200"><span data-i18n="dist2">Most ljubavi & Vrabac Gočko</span><span class="text-spa-green font-bold" data-i18n="dist2Val">2 min hoda</span></li>
+                    <li class="flex justify-between py-2 border-b border-stone-200"><span data-i18n="dist3">Merkur i banjsko lečilište</span><span class="text-spa-green font-bold" data-i18n="dist3Val">Prekoputa</span></li>
+                </ul>
+            </div>
+            <div class="rounded-3xl overflow-hidden shadow-lg border-4 border-white h-[350px]">
+                <iframe src="https://maps.google.com/maps?q=Cara%20Du%C5%A1ana%2026,%20Vrnja%C4%8Dka%20Banja&t=&z=16&ie=UTF8&iwloc=&output=embed" width="100%" height="100%" style="border:0;" loading="lazy"></iframe>
+            </div>
+        </div>
+    </section>
+
+    <!-- Rezervacija / Kontakt -->
+    <section id="rezervacija" class="py-20 px-6 lg:px-12 max-w-7xl mx-auto">
+        <div class="bg-spa-green rounded-3xl text-white p-8 sm:p-12 grid lg:grid-cols-2 gap-12 shadow-2xl">
+            <div>
+                <span class="text-xs uppercase tracking-widest text-spa-gold font-bold" data-i18n="resOverline">Direktan Kontakt</span>
+                <h2 class="text-3xl sm:text-4xl font-bold mt-2" data-i18n="resTitle">Rezervišite direktno kod domaćina</h2>
+                <p class="text-stone-300 text-sm mt-4" data-i18n="resSub">Bez posrednika i bez provizije. Pošaljite termin i broj gostiju, odgovaramo istog dana sa cenom i slobodnim apartmanima.</p>
+                
+                <div class="mt-8 space-y-4">
+                    <a href="tel:+381631904535" class="inline-flex items-center gap-3.5 bg-white/10 hover:bg-white/20 px-5 py-3.5 rounded-2xl transition group">
+                        <span class="w-10 h-10 rounded-full bg-spa-gold/20 text-spa-gold flex items-center justify-center">
+                            <svg class="w-5 h-5" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/></svg>
+                        </span>
+                        <div>
+                            <span class="text-[11px] uppercase tracking-wider text-stone-300 block" data-i18n="callNow">Pozovite direktno</span>
+                            <span class="text-2xl font-serif font-bold text-spa-gold tracking-wide">+381 63 190 4535</span>
+                        </div>
+                    </a>
+
+                    <p class="flex items-center gap-3 text-sm pt-2">
+                        <span class="w-8 h-8 rounded-full bg-white/10 flex items-center justify-center">
+                            <svg class="w-4 h-4 text-spa-gold" fill="none" stroke="currentColor" stroke-width="2" viewBox="0 0 24 24"><rect x="2" y="4" width="20" height="16" rx="2"/><path d="m22 7-8.97 5.7a1.94 1.94 0 0 1-2.06 0L2 7"/></svg>
+                        </span>
+                        <a href="mailto:virtusapartmanivb@gmail.com" class="hover:text-spa-gold transition font-medium">virtusapartmanivb@gmail.com</a>
+                    </p>
+                </div>
+
+                <div class="mt-8 pt-6 border-t border-white/20 flex flex-wrap gap-3">
+                    <a href="https://www.booking.com/Pulse-N9ky4M" target="_blank" rel="noopener" class="bg-white/10 hover:bg-white/25 text-white px-4 py-2 rounded-xl text-xs font-semibold transition">Booking.com</a>
+                    <a href="https://www.instagram.com/virtus_apartmani_vb/" target="_blank" rel="noopener" class="bg-white/10 hover:bg-white/25 text-white px-4 py-2 rounded-xl text-xs font-semibold transition">Instagram</a>
+                    <a href="https://www.facebook.com/500743576457725?ref=NONE_xav_ig_profile_page_web" target="_blank" rel="noopener" class="bg-white/10 hover:bg-white/25 text-white px-4 py-2 rounded-xl text-xs font-semibold transition">Facebook</a>
+                </div>
+            </div>
+
+            <div class="bg-white text-stone-800 p-8 rounded-2xl shadow">
+                <h3 class="font-serif text-2xl font-bold text-spa-green mb-4" data-i18n="formTitle">Pošaljite upit</h3>
+                <div class="space-y-4">
+                    <div>
+                        <label class="block text-xs font-bold uppercase text-spa-muted mb-1" data-i18n="lblName">Vaše ime i prezime *</label>
+                        <input type="text" id="fName" placeholder="Npr. Marko Petrović" required class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-spa-bg text-sm">
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-spa-muted mb-1" data-i18n="lblIn">Datum dolaska</label>
+                            <input type="date" id="fIn" class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-spa-bg text-sm">
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-spa-muted mb-1" data-i18n="lblOut">Datum odlaska</label>
+                            <input type="date" id="fOut" class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-spa-bg text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3">
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-spa-muted mb-1" data-i18n="lblGuests">Broj gostiju</label>
+                            <select id="fGuests" class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-spa-bg text-sm">
+                                <option value="2 osobe">2</option>
+                                <option value="1 osoba">1</option>
+                                <option value="3 osobe">3</option>
+                                <option value="4 osobe">4</option>
+                            </select>
+                        </div>
+                        <div>
+                            <label class="block text-xs font-bold uppercase text-spa-muted mb-1" data-i18n="lblApt">Željeni apartman</label>
+                            <input type="text" id="fApt" placeholder="Npr. Virtus 2" class="w-full px-4 py-3 rounded-xl border border-stone-200 bg-spa-bg text-sm">
+                        </div>
+                    </div>
+                    <div class="grid grid-cols-2 gap-3 pt-2">
+                        <button onclick="sendInquiry('whatsapp')" class="bg-[#25D366] hover:bg-[#20bd5a] text-white font-bold py-3 rounded-xl text-sm transition shadow flex items-center justify-center gap-1.5 cursor-pointer">WhatsApp</button>
+                        <button onclick="sendInquiry('viber')" class="bg-[#7360F2] hover:bg-[#614ee0] text-white font-bold py-3 rounded-xl text-sm transition shadow flex items-center justify-center gap-1.5 cursor-pointer">Viber</button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="bg-spa-sand border-t border-stone-200 py-10 text-center text-sm text-spa-muted">
+        <div class="max-w-7xl mx-auto px-4">
+            <p class="font-serif text-2xl font-bold text-spa-green">VIRTUS APARTMANI</p>
+            <p class="mt-1">Cara Dušana 26, Vrnjačka Banja • <a href="tel:+381631904535" class="font-semibold text-spa-green hover:underline">+381 63 190 4535</a></p>
+            <div class="flex justify-center gap-4 mt-4 text-xs font-bold text-spa-green">
+                <a href="https://www.booking.com/Pulse-N9ky4M" target="_blank" rel="noopener" class="hover:underline">Booking.com</a>
+                <a href="https://www.instagram.com/virtus_apartmani_vb/" target="_blank" rel="noopener" class="hover:underline">Instagram</a>
+                <a href="https://www.facebook.com/500743576457725?ref=NONE_xav_ig_profile_page_web" target="_blank" rel="noopener" class="hover:underline">Facebook</a>
+            </div>
+            <p class="text-xs mt-4 text-stone-400">© 2026 Virtus Apartmani. Sva prava zadržana.</p>
+        </div>
+    </footer>
+
+    <!-- Modal za galeriju apartmana -->
+    <div id="aptModal" class="fixed inset-0 z-50 hidden bg-black/75 flex items-center justify-center p-4" onclick="closeModal(event)">
+        <div class="bg-white rounded-3xl max-w-3xl w-full p-6 sm:p-8 relative max-h-[90vh] overflow-y-auto" onclick="event.stopPropagation()">
+            <button onclick="closeModal()" class="absolute top-4 right-4 w-9 h-9 rounded-full bg-stone-100 hover:bg-spa-green hover:text-white transition font-bold cursor-pointer">✕</button>
+            <h3 id="modalTitle" class="font-serif text-3xl font-bold text-spa-green mb-1"></h3>
+            <p id="modalMeta" class="text-sm font-semibold text-spa-gold mb-4"></p>
+            <p id="modalDesc" class="text-sm text-spa-muted mb-6 leading-relaxed"></p>
+            <h4 id="modalEquipHeading" class="font-bold text-xs uppercase tracking-wider text-spa-green mb-3">Opremljenost (Sadržaj apartmana):</h4>
+            <div id="modalAmenities" class="grid sm:grid-cols-2 gap-2.5 text-sm mb-6"></div>
+            <button id="modalSelectBtn" onclick="selectForBookingModal()" class="w-full bg-spa-green hover:bg-spa-greenLight transition text-white font-bold py-3.5 rounded-xl text-sm cursor-pointer">Izaberi ovaj apartman za upit</button>
+        </div>
+    </div>
+
+    <script>
+        const apartmentsData = [
+            {
+                id: 'v1',
+                sr: {
+                    name: 'Apartman Virtus 1',
+                    meta: 'Visoko prizemlje • Sa terasom',
+                    shortDesc: 'Komforan apartman na visokom prizemlju sa sopstvenom terasom i odvojenom spavaćom sobom.',
+                    fullDesc: 'Apartman Virtus 1 površine 34 m² nalazi se na visokom prizemlju. Poseduje zasebnu spavaću sobu, dnevni boravak sa kompletnom kuhinjom i sopstvenu terasu.',
+                    amenities: [
+                        'Privatni parking (besplatan)',
+                        'Brz WiFi (99 Mbps)',
+                        'Opremljena kuhinja (frižider, rerna, ploča)',
+                        'Aparat za kafu i električno kuvalo',
+                        'Inverter klima uređaj u dnevnoj sobi',
+                        'Norveški radijator u spavaćoj sobi',
+                        'Smart TV + EON box kanali',
+                        'Sopstveno kupatilo (peškiri, fen, kupke)',
+                        'Pegla za veš',
+                        'Krevetac za bebe (besplatno na zahtev)',
+                        'Mogućnost korišćenja turističkih vaučera'
+                    ]
+                },
+                en: {
+                    name: 'Apartment Virtus 1',
+                    meta: 'High Ground Floor • Private Terrace',
+                    shortDesc: 'Comfortable apartment on the high ground floor featuring a private terrace and a separate bedroom.',
+                    fullDesc: 'Apartment Virtus 1 (34 m²) is located on the high ground floor. It features a separate bedroom, a living room with a fully equipped kitchen, and a private terrace.',
+                    amenities: [
+                        'Free private parking on site',
+                        'Fast WiFi (99 Mbps)',
+                        'Fully equipped kitchen (fridge, oven, stove)',
+                        'Coffee maker & electric kettle',
+                        'Inverter AC in living room',
+                        'Norwegian radiator in bedroom',
+                        'Smart TV + EON cable channels',
+                        'Private bathroom (towels, hairdryer, toiletries)',
+                        'Iron',
+                        'Free baby cot on request'
+                    ]
+                },
+                images: ['https://images.unsplash.com/photo-1522708323590-d24dbb6b0267?auto=format&fit=crop&w=800&q=80']
+            },
+            {
+                id: 'v2',
+                sr: {
+                    name: 'Apartman Virtus 2',
+                    meta: 'Prvi sprat • Sa terasom',
+                    shortDesc: 'Svetao i moderan apartman na prvom spratu sa terasom, odvojenom spavaćom sobom i kompletnom opremom.',
+                    fullDesc: 'Apartman Virtus 2 površine 34 m² nalazi se na prvom spratu. Sastoji se od zasebne spavaće sobe, dnevnog boravka sa kuhinjom, kupatila i terase.',
+                    amenities: [
+                        'Privatni parking (besplatan)',
+                        'Brz WiFi (99 Mbps)',
+                        'Opremljena kuhinja (frižider, rerna, ploča)',
+                        'Aparat za kafu i električno kuvalo',
+                        'Inverter klima uređaj u dnevnoj sobi',
+                        'Norveški radijator u spavaćoj sobi',
+                        'Smart TV + EON box kanali',
+                        'Sopstveno kupatilo (peškiri, fen, kupke)',
+                        'Pegla za veš',
+                        'Krevetac za bebe (besplatno na zahtev)',
+                        'Mogućnost korišćenja turističkih vaučera'
+                    ]
+                },
+                en: {
+                    name: 'Apartment Virtus 2',
+                    meta: 'First Floor • Private Terrace',
+                    shortDesc: 'Bright and modern first-floor apartment with a terrace, separate bedroom, and full amenities.',
+                    fullDesc: 'Apartment Virtus 2 (34 m²) is located on the first floor. It consists of a separate bedroom, living room with kitchen, private bathroom, and terrace.',
+                    amenities: [
+                        'Free private parking on site',
+                        'Fast WiFi (99 Mbps)',
+                        'Fully equipped kitchen (fridge, oven, stove)',
+                        'Coffee maker & electric kettle',
+                        'Inverter AC in living room',
+                        'Norwegian radiator in bedroom',
+                        'Smart TV + EON cable channels',
+                        'Private bathroom (towels, hairdryer, toiletries)',
+                        'Iron',
+                        'Free baby cot on request'
+                    ]
+                },
+                images: ['https://images.unsplash.com/photo-1502672260266-1c1ef2d93688?auto=format&fit=crop&w=800&q=80']
+            },
+            {
+                id: 'v3',
+                sr: {
+                    name: 'Apartman Virtus 3',
+                    meta: 'Prvi sprat • Zasebna spavaća soba',
+                    shortDesc: 'Prostran apartman od 34 m² na prvom spratu sa odvojenom spavaćom sobom, idealan za parove i porodice.',
+                    fullDesc: 'Apartman Virtus 3 površine 34 m² nalazi se na prvom spratu. Poseduje odvojenu spavaću sobu, moderan dnevni boravak i kompletno opremljenu kuhinju.',
+                    amenities: [
+                        'Privatni parking (besplatan)',
+                        'Brz WiFi (99 Mbps)',
+                        'Opremljena kuhinja (frižider, rerna, ploča)',
+                        'Aparat za kafu i električno kuvalo',
+                        'Inverter klima uređaj u dnevnoj sobi',
+                        'Norveški radijator u spavaćoj sobi',
+                        'Smart TV + EON box kanali',
+                        'Sopstveno kupatilo (peškiri, fen, kupke)',
+                        'Pegla za veš',
+                        'Krevetac za bebe (besplatno na zahtev)',
+                        'Mogućnost korišćenja turističkih vaučera'
+                    ]
+                },
+                en: {
+                    name: 'Apartment Virtus 3',
+                    meta: 'First Floor • Separate Bedroom',
+                    shortDesc: 'Spacious 34 m² first-floor apartment with a separate bedroom, ideal for couples and families.',
+                    fullDesc: 'Apartment Virtus 3 (34 m²) is situated on the first floor. It features a separate bedroom, modern living area, and a fully equipped kitchen.',
+                    amenities: [
+                        'Free private parking on site',
+                        'Fast WiFi (99 Mbps)',
+                        'Fully equipped kitchen (fridge, oven, stove)',
+                        'Coffee maker & electric kettle',
+                        'Inverter AC in living room',
+                        'Norwegian radiator in bedroom',
+                        'Smart TV + EON cable channels',
+                        'Private bathroom (towels, hairdryer, toiletries)',
+                        'Iron',
+                        'Free baby cot on request'
+                    ]
+                },
+                images: ['https://images.unsplash.com/photo-1600585154340-be6161a56a0c?auto=format&fit=crop&w=800&q=80']
+            }
+        ];
+
+        const translations = {
+            sr: {
+                brandSub: 'Apartmani • Vrnjačka Banja',
+                navApts: 'Apartmani',
+                navAmenities: 'Sadržaj',
+                navGallery: 'Galerija',
+                navReviews: 'Utisci',
+                navLocation: 'Lokacija',
+                navContact: 'Kontakt',
+                heroBadge: 'Cara Dušana 26 • Prekoputa Merkura i banjskog lečilišta',
+                heroTitle: 'Vaš miran kutak u srcu Vrnjačke Banje',
+                heroDesc: 'Dobrodošli u Virtus Apartmane – vaš topli, ušuškani kutak u strogom centru Vrnjačke Banje (Cara Dušana 26). Smešteni neposredno prekoputa Specijalne bolnice Merkur i na svega minut hoda od centralne Promenade i Mosta ljubavi, nudimo vam savršen spoj mira, udobnosti i blizine svih dešavanja. Opustite se i doživite banju onako kako dolikuje!',
+                heroBtn1: 'Pogledaj apartmane',
+                heroBtn2: 'Rezervacija',
+                aptOverline: 'Naš Smeštaj',
+                aptTitle: 'Tri apartmana, kreirana za uživanje',
+                aptSub: 'Svi su novi, sa odvojenom spavaćom sobom, opremljenom kuhinjom i sopstvenim kupatilom.',
+                btnDetails: 'Detalji',
+                btnInquiry: 'Upit',
+                amOverline: 'Pogodnosti',
+                amTitle: 'Sve što vam treba je već tu',
+                amSub: 'Gosti su WiFi i lokaciju ocenili čistom desetkom.',
+                am1Title: 'Privatni parking',
+                am1Desc: 'Besplatan, u okviru objekta',
+                am2Title: 'Brz WiFi',
+                am2Desc: '99 Mbps, besplatan',
+                am3Title: 'Opremljena kuhinja',
+                am3Desc: 'Frižider, rerna, ploča za kuvanje',
+                am4Title: 'Aparat za kafu',
+                am4Desc: 'I električno kuvalo',
+                am5Title: 'Klima uređaj',
+                am5Desc: 'Inverter klima u svakom apartmanu',
+                am6Title: 'Smart TV',
+                am6Desc: 'EON box kanali',
+                am7Title: 'Sopstveno kupatilo',
+                am7Desc: 'Tuš kabina, peškiri, fen i kupke',
+                am8Title: 'Za porodice',
+                am8Desc: 'Krevetac za bebe besplatno',
+                galOverline: 'Foto Galerija',
+                galTitle: 'Zavirite u Virtus Apartmane',
+                revOverline: 'Booking.com Ocene',
+                revTitle: 'Šta kažu naši gosti',
+                revSub: 'Izuzetne ocene za čistoću, udobnost i vrhunsku lokaciju.',
+                rev1Text: '"Sve je bilo savršeno! Lokacija je u samom centru, apartman prečist, moderan i ima sve što treba. Preporuka svima!"',
+                rev2Text: '"Domaćini izuzetno ljubazni. Wi-Fi i lokacija su čista desetka. Parking obezbeđen ispred zgrade."',
+                rev3Text: '"Mirno iako je u centru. Odvojena spavaća soba pruža odličan komfor. Sigurno se vraćamo ponovo!"',
+                rulesTitle: 'Važne informacije za goste',
+                rule1Title: 'Prijava',
+                rule1Desc: 'Od 12:00 h (uz najavu dolaska).',
+                rule2Title: 'Odjava',
+                rule2Desc: 'Do 10:00 h.',
+                rule3Title: 'Plaćanje i Vaučeri',
+                rule3Desc: 'Plaćanje samo gotovinom. Postoji mogućnost korišćenja turističkih vaučera.',
+                rule4Title: 'Kućni red',
+                rule4Desc: 'Zabranjeno pušenje i kućni ljubimci. Kućni mir / tišina od 22:00 h.',
+                locOverline: 'Lokacija',
+                locTitle: 'Sve Vam je na dohvat ruke',
+                locDesc: 'Cara Dušana 26, u strogom centru Vrnjačke Banje.',
+                dist1: 'Promenada (šetalište)',
+                dist1Val: '1 min hoda',
+                dist2: 'Most ljubavi & Vrabac Gočko',
+                dist2Val: '2 min hoda',
+                dist3: 'Merkur i banjsko lečilište',
+                dist3Val: 'Prekoputa',
+                resOverline: 'Direktan Kontakt',
+                resTitle: 'Rezervišite direktno kod domaćina',
+                resSub: 'Bez posrednika i bez provizije. Pošaljite termin i broj gostiju, odgovaramo istog dana sa cenom i slobodnim apartmanima.',
+                callNow: 'Pozovite direktno',
+                formTitle: 'Pošaljite upit',
+                lblName: 'Vaše ime i prezime *',
+                lblIn: 'Datum dolaska',
+                lblOut: 'Datum odlaska',
+                lblGuests: 'Broj gostiju',
+                lblApt: 'Željeni apartman'
+            },
+            en: {
+                brandSub: 'Apartments • Vrnjačka Banja',
+                navApts: 'Apartments',
+                navAmenities: 'Amenities',
+                navGallery: 'Gallery',
+                navReviews: 'Reviews',
+                navLocation: 'Location',
+                navContact: 'Contact',
+                heroBadge: 'Cara Dušana 26 • Across from Merkur Spa & 1 min from Promenade',
+                heroTitle: 'Your Peaceful Retreat in the Heart of Vrnjačka Banja',
+                heroDesc: 'Welcome to Virtus Apartments – your warm, cozy retreat in the strict center of Vrnjačka Banja (Cara Dušana 26). Located right across from the Merkur Medical Center and just a minute walk from the main Promenade and Bridge of Love, we offer a perfect blend of peace, comfort, and proximity to all events. Relax and experience the spa as it should be!',
+                heroBtn1: 'Explore Apartments',
+                heroBtn2: 'Book Now',
+                aptOverline: 'Our Accommodation',
+                aptTitle: 'Three Apartments Crafted for Comfort',
+                aptSub: 'All brand new, featuring a separate bedroom, fully equipped kitchen, and private bathroom.',
+                btnDetails: 'Details',
+                btnInquiry: 'Inquire',
+                amOverline: 'Amenities',
+                amTitle: 'Everything You Need is Already Here',
+                amSub: 'Guests rated our WiFi and location a perfect 10.',
+                am1Title: 'Private Parking',
+                am1Desc: 'Free on-site parking',
+                am2Title: 'Fast WiFi',
+                am2Desc: '99 Mbps, complimentary',
+                am3Title: 'Equipped Kitchen',
+                am3Desc: 'Fridge, oven, stovetop',
+                am4Title: 'Coffee Maker',
+                am4Desc: 'Plus electric kettle',
+                am5Title: 'Air Conditioning',
+                am5Desc: 'Inverter AC in every apartment',
+                am6Title: 'Smart TV',
+                am6Desc: 'EON cable channels',
+                am7Title: 'Private Bathroom',
+                am7Desc: 'Shower, towels, hairdryer & toiletries',
+                am8Title: 'Family Friendly',
+                am8Desc: 'Free baby cot available',
+                galOverline: 'Photo Gallery',
+                galTitle: 'Take a Look Inside Virtus Apartments',
+                revOverline: 'Booking.com Reviews',
+                revTitle: 'What Our Guests Say',
+                revSub: 'Exceptional ratings for cleanliness, comfort, and prime location.',
+                rev1Text: '"Everything was perfect! Right in the center, spotless, modern, and has everything you need. Highly recommended!"',
+                rev2Text: '"Extremely kind hosts. Wi-Fi and location are a pure 10. Free parking provided right in front of the building."',
+                rev3Text: '"Peaceful despite being in the very center. The separate bedroom offers great comfort. We will definitely return!"',
+                rulesTitle: 'Important Guest Information',
+                rule1Title: 'Check-in',
+                rule1Desc: 'From 12:00 PM (with prior arrival notice).',
+                rule2Title: 'Check-out',
+                rule2Desc: 'Until 10:00 AM.',
+                rule3Title: 'Payment',
+                rule3Desc: 'Cash payment only upon arrival.',
+                rule4Title: 'House Rules',
+                rule4Desc: 'No smoking and no pets allowed. Quiet hours start at 10:00 PM.',
+                locOverline: 'Location',
+                locTitle: 'Everything Within Walking Distance',
+                locDesc: 'Cara Dušana 26, right in the strict center of Vrnjačka Banja.',
+                dist1: 'Main Promenade',
+                dist1Val: '1 min walk',
+                dist2: 'Bridge of Love & Vrabac Gočko',
+                dist2Val: '2 min walk',
+                dist3: 'Merkur Spa & Medical Center',
+                dist3Val: 'Across the street',
+                resOverline: 'Direct Contact',
+                resTitle: 'Book Directly With the Host',
+                resSub: 'No middlemen and no commissions. Send your dates and number of guests, and we will reply the same day.',
+                callNow: 'Call directly',
+                formTitle: 'Send an Inquiry',
+                lblName: 'Your Full Name *',
+                lblIn: 'Check-in Date',
+                lblOut: 'Check-out Date',
+                lblGuests: 'Number of Guests',
+                lblApt: 'Preferred Apartment'
+            }
+        };
+
+        let currentLang = 'sr';
+        let selectedModalApt = '';
+
+        function renderApartments() {
+            const grid = document.getElementById('apartmentsGrid');
+            grid.innerHTML = '';
+            const btnDet = translations[currentLang].btnDetails;
+            const btnInq = translations[currentLang].btnInquiry;
+
+            apartmentsData.forEach((apt, index) => {
+                const data = apt[currentLang];
+                const card = document.createElement('div');
+                card.className = 'bg-white rounded-3xl overflow-hidden shadow-md border border-stone-100 flex flex-col justify-between';
+                card.innerHTML = `
+                    <div>
+                        <div class="h-60 overflow-hidden cursor-pointer" onclick="openModal(${index})">
+                            <img src="${apt.images[0]}" alt="${data.name}" class="w-full h-full object-cover hover:scale-105 transition duration-500">
+                        </div>
+                        <div class="p-6">
+                            <span class="text-xs font-semibold text-spa-gold uppercase">${data.meta}</span>
+                            <h3 class="font-serif text-3xl font-bold text-spa-green mt-1">${data.name}</h3>
+                            <p class="text-sm text-spa-muted mt-2">${data.shortDesc}</p>
+                        </div>
+                    </div>
+                    <div class="p-6 pt-0 flex gap-2">
+                        <button onclick="openModal(${index})" class="flex-1 py-3 rounded-xl border border-spa-green text-spa-green font-semibold text-sm hover:bg-spa-green hover:text-white transition cursor-pointer">${btnDet}</button>
+                        <button onclick="selectForBooking('${data.name}')" class="py-3 px-4 rounded-xl bg-spa-green text-white font-semibold text-sm hover:bg-spa-greenLight transition cursor-pointer">${btnInq}</button>
+                    </div>
+                `;
+                grid.appendChild(card);
+            });
+        }
+
+        function toggleLanguage() {
+            currentLang = currentLang === 'sr' ? 'en' : 'sr';
+            document.getElementById('langToggle').innerText = currentLang === 'sr' ? 'EN' : 'SR';
+            
+            document.querySelectorAll('[data-i18n]').forEach(el => {
+                const key = el.getAttribute('data-i18n');
+                if (translations[currentLang][key]) {
+                    el.innerText = translations[currentLang][key];
+                }
+            });
+
+            document.getElementById('fName').placeholder = currentLang === 'sr' ? 'Npr. Marko Petrović' : 'e.g. John Smith';
+            document.getElementById('fApt').placeholder = currentLang === 'sr' ? 'Npr. Virtus 2' : 'e.g. Virtus 2';
+            renderApartments();
+        }
+
+        function selectForBooking(aptName) {
+            document.getElementById('fApt').value = aptName;
+            document.getElementById('rezervacija').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function selectForBookingModal() {
+            document.getElementById('fApt').value = selectedModalApt;
+            closeModal();
+            document.getElementById('rezervacija').scrollIntoView({ behavior: 'smooth' });
+        }
+
+        function openModal(index) {
+            const apt = apartmentsData[index][currentLang];
+            selectedModalApt = apt.name;
+            document.getElementById('modalTitle').innerText = apt.name;
+            document.getElementById('modalMeta').innerText = apt.meta;
+            document.getElementById('modalDesc').innerText = apt.fullDesc;
+            document.getElementById('modalEquipHeading').innerText = currentLang === 'sr' ? 'Opremljenost (Sadržaj apartmana):' : 'Apartment Amenities:';
+            document.getElementById('modalSelectBtn').innerText = currentLang === 'sr' ? 'Izaberi ovaj apartman za upit' : 'Select This Apartment for Inquiry';
+            document.getElementById('modalAmenities').innerHTML = apt.amenities.map(i => `<div class="bg-spa-bg p-2.5 rounded-lg text-sm flex items-center gap-2"><span class="text-spa-green font-bold">✓</span><span>${i}</span></div>`).join('');
+            document.getElementById('aptModal').classList.remove('hidden');
+        }
+
+        function closeModal(e) {
+            if (!e || e.target.id === 'aptModal' || e.target.tagName === 'BUTTON') {
+                document.getElementById('aptModal').classList.add('hidden');
+            }
+        }
+
+        function sendInquiry(platform) {
+            const name = document.getElementById('fName').value.trim();
+            if (!name) {
+                alert(currentLang === 'sr' ? 'Molimo unesite Vaše ime i prezime.' : 'Please enter your full name.');
+                document.getElementById('fName').focus();
+                return;
+            }
+
+            const checkIn = document.getElementById('fIn').value || (currentLang === 'sr' ? 'Nije izabrano' : 'Not selected');
+            const checkOut = document.getElementById('fOut').value || (currentLang === 'sr' ? 'Nije izabrano' : 'Not selected');
+            const guests = document.getElementById('fGuests').value;
+            const apt = document.getElementById('fApt').value.trim() || (currentLang === 'sr' ? 'Svejedno / Bilo koji slobodan' : 'Any available apartment');
+
+            const textBody = currentLang === 'sr' 
+                ? `Zdravo! Ovde ${name}.\n• Dolazak: ${checkIn}\n• Odlazak: ${checkOut}\n• Broj gostiju: ${guests}\n• Apartman: ${apt}`
+                : `Hello! My name is ${name}.\n• Check-in: ${checkIn}\n• Check-out: ${checkOut}\n• Guests: ${guests}\n• Apartment: ${apt}`;
+
+            const msg = encodeURIComponent(textBody);
+
+            if (platform === 'whatsapp') {
+                window.open(`https://wa.me/381631904535?text=${msg}`, '_blank');
+            } else if (platform === 'viber') {
+                window.open(`viber://chat?number=%2B381631904535&text=${msg}`, '_blank');
+            }
+        }
+
+        renderApartments();
+    </script>
+</body>
+</html>
