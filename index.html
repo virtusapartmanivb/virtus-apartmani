@@ -284,14 +284,122 @@
         </div>
     </section>
 
-    <!-- Modalni prozor za krupni kadar (Lightbox) -->
-    <div id="slikaModal" class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4" onclick="zatvoriModal()">
-        <div class="relative max-w-4xl w-full text-center" onclick="event.stopPropagation()">
-            <button onclick="zatvoriModal()" class="absolute -top-10 right-0 text-white text-3xl font-bold hover:text-gray-300">&times;</button>
-            <img id="modalImg" src="" alt="Krupni kadar" class="max-h-[80vh] mx-auto rounded-lg shadow-2xl object-contain">
-            <p id="modalText" class="text-white mt-4 text-lg font-medium"></p>
+<!-- Modalni prozor za krupni kadar sa strelicama za listanje -->
+    <div id="slikaModal" class="fixed inset-0 z-50 hidden bg-black/90 flex items-center justify-center p-4">
+        <div class="relative max-w-4xl w-full text-center flex items-center justify-center" onclick="event.stopPropagation()">
+            
+            <!-- Dugme za zatvaranje (X) -->
+            <button onclick="zatvoriModal()" class="absolute -top-12 right-0 text-white text-3xl font-bold hover:text-gray-300 z-20">&times;</button>
+            
+            <!-- Strelica za prethodnu sliku -->
+            <button onclick="prethodnaSlika()" class="absolute left-2 md:-left-12 text-white text-3xl md:text-4xl font-bold p-3 hover:text-gray-300 z-20 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center transition">&#10094;</button>
+            
+            <!-- Slika i opis -->
+            <div class="flex flex-col items-center max-w-full">
+                <img id="modalImg" src="" alt="Krupni kadar" class="max-h-[80vh] max-w-full mx-auto rounded-lg shadow-2xl object-contain">
+                <p id="modalText" class="text-white mt-4 text-lg font-medium"></p>
+            </div>
+            
+            <!-- Strelica za sledeću sliku -->
+            <button onclick="sledecaSlika()" class="absolute right-2 md:-right-12 text-white text-3xl md:text-4xl font-bold p-3 hover:text-gray-300 z-20 bg-black/50 rounded-full w-12 h-12 flex items-center justify-center transition">&#10095;</button>
         </div>
     </div>
+
+    <!-- Napredna JavaScript skripta za listanje (klik, tastatura i swipe) -->
+    <script>
+        let galerijaSlike = [];
+        let trenutniIndeks = 0;
+
+        // Automatsko sakupljanje svih slika iz galerije pri učitavanju stranice
+        document.addEventListener('DOMContentLoaded', () => {
+            const elementi = document.querySelectorAll('#galerija [onclick^="otvoriModal"]');
+            elementi.forEach((el, index) => {
+                const img = el.querySelector('img');
+                const altText = img ? img.alt : '';
+                galerijaSlike.push({
+                    src: img ? img.src : '',
+                    opis: altText
+                });
+                
+                // Dinamički prepravljamo klik da otvara tačan indeks slike u nizu
+                el.setAttribute('onclick', `otvoriIndeks(${index})`);
+            });
+        });
+
+        function otvoriIndeks(index) {
+            trenutniIndeks = index;
+            prikaziSliku();
+            document.getElementById('slikaModal').classList.remove('hidden');
+        }
+
+        function prikaziSliku() {
+            if (galerijaSlike.length === 0) return;
+            const slika = galerijaSlike[trenutniIndeks];
+            document.getElementById('modalImg').src = slika.src;
+            document.getElementById('modalText').textContent = slika.opis;
+        }
+
+        function sledecaSlika() {
+            trenutniIndeks = (trenutniIndeks + 1) % galerijaSlike.length;
+            prikaziSliku();
+        }
+
+        function prethodnaSlika() {
+            trenutniIndeks = (trenutniIndeks - 1 + galerijaSlike.length) % galerijaSlike.length;
+            prikaziSliku();
+        }
+
+        function zatvoriModal() {
+            document.getElementById('slikaModal').classList.add('hidden');
+        }
+
+        // 1. Kontrola preko tastature (Strelice levo/desno i Escape)
+        document.addEventListener('keydown', (e) => {
+            const modal = document.getElementById('slikaModal');
+            if (modal.classList.contains('hidden')) return;
+
+            if (e.key === 'ArrowRight') sledecaSlika();
+            if (e.key === 'ArrowLeft') prethodnaSlika();
+            if (e.key === 'Escape') zatvoriModal();
+        });
+
+        // 2. Kontrola preko prevlačenja prsta (Swipe) na mobilnim telefonima
+        let touchStartX = 0;
+        let touchEndX = 0;
+
+        const modalElement = document.getElementById('slikaModal');
+        
+        modalElement.addEventListener('touchstart', (e) => {
+            touchStartX = e.changedTouches[0].screenX;
+        }, {passive: true});
+
+        modalElement.addEventListener('touchend', (e) => {
+            touchEndX = e.changedTouches[0].screenX;
+            proveriSwipe();
+        }, {passive: true});
+
+        function proveriSwipe() {
+            const razlika = touchStartX - touchEndX;
+            const pragOsetljivosti = 50; // Minimalna dužina prevlačenja u pikselima
+            
+            if (Math.abs(razlika) > pragOsetljivosti) {
+                if (razlika > 0) {
+                    // Prevlačenje ulevo -> idemo na sledeću sliku
+                    sledecaSlika();
+                } else {
+                    // Prevlačenje udesno -> idemo na prethodnu sliku
+                    prethodnaSlika();
+                }
+            }
+        }
+
+        // Zatvaranje modala klikom na crnu pozadinu van slike
+        document.getElementById('slikaModal').addEventListener('click', (e) => {
+            if (e.target.id === 'slikaModal') {
+                zatvoriModal();
+            }
+        });
+    </script>
 
     <!-- JavaScript za krupni kadar -->
     <script>
