@@ -1,0 +1,3 @@
+User-agent: *
+Allow: /
+Sitemap: https://VAS-DOMEN.rs/sitemap.xml
